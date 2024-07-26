@@ -1,0 +1,21 @@
+{% extends 'upload/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title> 
+</head>
+
+<form method="POST" class="post-form" enctype="multipart/form-data">  
+        {% csrf_token %}  
+        <br>
+        {{ documents.as_p }}
+        &nbsp&nbsp<button type="submit" class="save btn btn-primary" formaction=" {% url 'index' %}">Save</button>  
+    </form>  
+
+{% endblock %}
+
